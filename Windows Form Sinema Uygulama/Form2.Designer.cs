@@ -33,7 +33,7 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            label1 = new Label();
+            lblFilm = new Label();
             button1 = new Button();
             SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             button5.TabIndex = 13;
             button5.Text = "Harry Potter";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -64,6 +65,7 @@
             button4.TabIndex = 12;
             button4.Text = "StarWars";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -73,6 +75,7 @@
             button3.TabIndex = 11;
             button3.Text = "TheGodFather";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -82,16 +85,17 @@
             button2.TabIndex = 10;
             button2.Text = "Esaretin Bedeli";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // label1
+            // lblFilm
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(270, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(243, 28);
-            label1.TabIndex = 9;
-            label1.Text = "GÖSTERİMDEKİ FİLMLER";
+            lblFilm.AutoSize = true;
+            lblFilm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFilm.Location = new Point(270, 37);
+            lblFilm.Name = "lblFilm";
+            lblFilm.Size = new Size(243, 28);
+            lblFilm.TabIndex = 9;
+            lblFilm.Text = "GÖSTERİMDEKİ FİLMLER";
             // 
             // button1
             // 
@@ -113,7 +117,7 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(label1);
+            Controls.Add(lblFilm);
             Controls.Add(button1);
             Name = "Form2";
             Text = "Form2";
@@ -128,7 +132,7 @@
         private Button button4;
         private Button button3;
         private Button button2;
-        private Label label1;
+        private Label lblFilm;
         private Button button1;
     }
 }

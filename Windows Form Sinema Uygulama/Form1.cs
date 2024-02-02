@@ -16,7 +16,7 @@ namespace Windows_Form_Sinema_Uygulama
 
             if (sifreGirisi == sifre && kullaniciGirisi == kullanici)
             {
-                Form2 form2 = new Form2();
+                Form2 form2 = new Form2(this);
                 this.Hide();
                 form2.Show();
             }

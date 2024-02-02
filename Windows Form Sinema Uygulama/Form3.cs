@@ -12,12 +12,14 @@ namespace Windows_Form_Sinema_Uygulama
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        private Form2 form2;
+        public Form3(Form _form2)
         {
             InitializeComponent();
+            form2 = (Form2)_form2;
         }
         public Sinema SinemaBilgisi { get; set; }
-        Form2 form2 = new Form2();
+        
 
         private void button1_Click(object sender, EventArgs e)
         {

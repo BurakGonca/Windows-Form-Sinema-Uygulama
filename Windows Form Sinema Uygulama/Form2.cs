@@ -12,15 +12,21 @@ namespace Windows_Form_Sinema_Uygulama
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private Form1 form1;
+
+        private Form3 form3;
+
+        public Form2(Form _form1)
         {
             InitializeComponent();
+            form3 = new Form3(this);
+            form1 = (Form1)_form1;
         }
-        Form1 form1 = new Form1();
-        Form3 form3 = new Form3();
+
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             form1.Show();
         }
@@ -56,8 +62,6 @@ namespace Windows_Form_Sinema_Uygulama
             this.Hide();
 
         }
-
-
     }
 
 
@@ -89,6 +93,6 @@ namespace Windows_Form_Sinema_Uygulama
 
     }
 
-    
+
 
 }
