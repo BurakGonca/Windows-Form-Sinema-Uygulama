@@ -14,7 +14,7 @@ namespace Windows_Form_Sinema_Uygulama
             kullaniciDizi[0] = new Kullanici("burak", "1234");
             kullaniciDizi[1] = new Kullanici("gonca", "4321");
             kullaniciDizi[2] = new Kullanici("burki", "1991");
-            
+
             string kullaniciGirisi = textBox1.Text.ToLower();
             string sifreGirisi = textBox2.Text;
 
@@ -31,12 +31,12 @@ namespace Windows_Form_Sinema_Uygulama
                         Form2 form2 = new Form2(this);
                         this.Hide();
                         form2.Show();
-                        return; 
+                        return;
                     }
                     else
                     {
                         MessageBox.Show("Þifrenizi hatalý girdiniz");
-                        return; 
+                        return;
                     }
                 }
             }

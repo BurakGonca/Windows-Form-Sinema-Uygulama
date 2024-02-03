@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             button5 = new Button();
-            checkBox1 = new CheckBox();
-            button3 = new Button();
-            button2 = new Button();
+            biletIadeButton = new Button();
+            biletSatButton = new Button();
             button1 = new Button();
             groupBox1 = new GroupBox();
             label1 = new Label();
@@ -40,47 +39,44 @@
             // 
             // button5
             // 
-            button5.Location = new Point(203, 438);
+            button5.BackgroundImage = Properties.Resources.FORM1;
+            button5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(203, 417);
             button5.Name = "button5";
             button5.Size = new Size(383, 43);
             button5.TabIndex = 14;
-            button5.Text = "Film Seçim Ekranı";
+            button5.Text = "Ana Sayfaya Geri Dön";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click_1;
             // 
-            // checkBox1
+            // biletIadeButton
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(353, 328);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(86, 24);
-            checkBox1.TabIndex = 12;
-            checkBox1.Text = "indirimli";
-            checkBox1.UseVisualStyleBackColor = true;
+            biletIadeButton.BackgroundImage = Properties.Resources._33;
+            biletIadeButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            biletIadeButton.Location = new Point(401, 336);
+            biletIadeButton.Name = "biletIadeButton";
+            biletIadeButton.Size = new Size(185, 75);
+            biletIadeButton.TabIndex = 11;
+            biletIadeButton.Text = "BİLET İADE";
+            biletIadeButton.UseVisualStyleBackColor = true;
+            biletIadeButton.Click += biletIadeButton_Click;
             // 
-            // button3
+            // biletSatButton
             // 
-            button3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(401, 357);
-            button3.Name = "button3";
-            button3.Size = new Size(185, 75);
-            button3.TabIndex = 11;
-            button3.Text = "BİLET İADE";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(197, 357);
-            button2.Name = "button2";
-            button2.Size = new Size(185, 75);
-            button2.TabIndex = 10;
-            button2.Text = "BİLET SAT";
-            button2.UseVisualStyleBackColor = true;
+            biletSatButton.BackgroundImage = Properties.Resources._33;
+            biletSatButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            biletSatButton.Location = new Point(197, 336);
+            biletSatButton.Name = "biletSatButton";
+            biletSatButton.Size = new Size(185, 75);
+            biletSatButton.TabIndex = 10;
+            biletSatButton.Text = "BİLET SAT";
+            biletSatButton.UseVisualStyleBackColor = true;
+            biletSatButton.Click += biletSatButton_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(345, 272);
+            button1.BackgroundImage = Properties.Resources.FORM1;
+            button1.Location = new Point(345, 292);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 9;
@@ -91,9 +87,10 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ScrollBar;
+            groupBox1.BackgroundImage = Properties.Resources._33;
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(197, 98);
+            groupBox1.Location = new Point(197, 118);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(389, 163);
             groupBox1.TabIndex = 8;
@@ -113,27 +110,26 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 579);
+            BackgroundImage = Properties.Resources._33;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(782, 613);
             Controls.Add(button5);
-            Controls.Add(checkBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(biletIadeButton);
+            Controls.Add(biletSatButton);
             Controls.Add(button1);
             Controls.Add(groupBox1);
             Name = "Form3";
-            Text = "Form3";
+            Text = "FİLM İSLEMLERİ";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button button5;
-        private CheckBox checkBox1;
-        private Button button3;
-        private Button button2;
+        private Button biletIadeButton;
+        private Button biletSatButton;
         private Button button1;
         private GroupBox groupBox1;
         private Label label1;
