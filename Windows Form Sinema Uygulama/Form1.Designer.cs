@@ -37,7 +37,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(388, 340);
+            button1.Location = new Point(336, 340);
             button1.Name = "button1";
             button1.Size = new Size(101, 29);
             button1.TabIndex = 9;
@@ -48,7 +48,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            textBox2.Location = new Point(335, 276);
+            textBox2.Location = new Point(283, 276);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '•';
@@ -59,7 +59,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            textBox1.Location = new Point(335, 209);
+            textBox1.Location = new Point(283, 209);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(205, 44);
@@ -69,7 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(287, 288);
+            label2.Location = new Point(229, 288);
             label2.Name = "label2";
             label2.Size = new Size(42, 20);
             label2.TabIndex = 6;
@@ -78,7 +78,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(234, 223);
+            label1.Location = new Point(176, 223);
             label1.Name = "label1";
             label1.Size = new Size(95, 20);
             label1.TabIndex = 5;

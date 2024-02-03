@@ -44,7 +44,7 @@
             button6.Name = "button6";
             button6.Size = new Size(165, 48);
             button6.TabIndex = 14;
-            button6.Text = "TOPLAM CİRO";
+            button6.Text = "DURUM BİLGİSİ";
             button6.UseVisualStyleBackColor = true;
             // 
             // button5

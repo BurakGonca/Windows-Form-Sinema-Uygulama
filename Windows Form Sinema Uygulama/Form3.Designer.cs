@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             button5 = new Button();
-            button4 = new Button();
             checkBox1 = new CheckBox();
             button3 = new Button();
             button2 = new Button();
@@ -41,21 +40,13 @@
             // 
             // button5
             // 
-            button5.Location = new Point(401, 438);
+            button5.Location = new Point(203, 438);
             button5.Name = "button5";
-            button5.Size = new Size(185, 43);
+            button5.Size = new Size(383, 43);
             button5.TabIndex = 14;
             button5.Text = "Film Seçim Ekranı";
             button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(197, 438);
-            button4.Name = "button4";
-            button4.Size = new Size(185, 43);
-            button4.TabIndex = 13;
-            button4.Text = "Durum Bilgisi";
-            button4.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click_1;
             // 
             // checkBox1
             // 
@@ -95,6 +86,7 @@
             button1.TabIndex = 9;
             button1.Text = "Göster";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // groupBox1
             // 
@@ -123,7 +115,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 579);
             Controls.Add(button5);
-            Controls.Add(button4);
             Controls.Add(checkBox1);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -140,7 +131,6 @@
         #endregion
 
         private Button button5;
-        private Button button4;
         private CheckBox checkBox1;
         private Button button3;
         private Button button2;

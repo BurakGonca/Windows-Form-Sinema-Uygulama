@@ -19,9 +19,10 @@ namespace Windows_Form_Sinema_Uygulama
             form2 = (Form2)_form2;
         }
         public Sinema SinemaBilgisi { get; set; }
-        
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             label1.Text = $"Filmin Adı             : {SinemaBilgisi.FilmAdi}\n" +
                           $"Kapasite               : {SinemaBilgisi.Kapasite} Koltuk\n" +
@@ -29,7 +30,7 @@ namespace Windows_Form_Sinema_Uygulama
                           $"Yarım Bilet Fiyatı : {SinemaBilgisi.YarimBiletFiyati} TL";
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             form2.Show();
