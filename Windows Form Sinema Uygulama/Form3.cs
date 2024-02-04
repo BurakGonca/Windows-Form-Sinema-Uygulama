@@ -14,19 +14,22 @@ namespace Windows_Form_Sinema_Uygulama
     {
         private Form2 form2;
         public Sinema Snm { get; set; }
-        public Form3(Form _form2)
+
+        public Form3(Form _form2, Sinema _snm)
         {
             InitializeComponent();
             form2 = (Form2)_form2;
+            Snm = _snm;
         }
-
-
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             label1.Text = $"Filmin Adı             : {Snm.FilmAdi}\n" +
                           $"Kapasite               : {Snm.Kapasite} Koltuk\n" +
-                          $"Bilet Fiyatı           : {Snm.TamBiletFiyati} TL\n";
+                          $"Bilet Fiyatı           : {Snm.BiletFiyati} TL\n" +
+                          $"Satılan Bilet Sayısı   : {Snm.TamBiletAdeti}\n" +
+                          $"Ciro                   : {Snm.Ciro} TL ";
+
 
         }
 
@@ -38,13 +41,13 @@ namespace Windows_Form_Sinema_Uygulama
 
         private void biletSatButton_Click(object sender, EventArgs e)
         {
-            int biletAdeti = 1;
+            int biletAdeti = (int) numericUpDown1.Value;
             Snm.BiletSatisi(biletAdeti);
         }
 
         private void biletIadeButton_Click(object sender, EventArgs e)
         {
-            int biletAdeti = 1;
+            int biletAdeti = (int)numericUpDown1.Value;
             Snm.BiletIadesi(biletAdeti);
         }
     }

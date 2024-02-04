@@ -15,109 +15,94 @@ namespace Windows_Form_Sinema_Uygulama
         private Form1 form1;
         private Form3 form3;
         public Sinema Snm { get; set; }
-
+        public Sinema EsaretinBedeli { get; set; }
+        public Sinema GodFather { get; set; }
+        public Sinema StarWars { get; set; }
+        public Sinema HarryPotter { get; set; }
 
         public Form2(Form _form1)
         {
             InitializeComponent();
-            form3 = new Form3(this);
+            form3 = new Form3(this, Snm);
             form1 = (Form1)_form1;
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
-
             this.Hide();
             form1.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Snm = new Sinema("Esaretin Bedeli", 100, 200);
-            form3.Snm = Snm;
+            EsaretinBedeli = new Sinema("Esaretin Bedeli",100,200);
+            form3 = new Form3(this,EsaretinBedeli);
             form3.Show();
             this.Hide();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
-            Snm = new Sinema("The GodFather", 150, 250);
-            form3.Snm = Snm;
+            GodFather = new Sinema("The GodFather", 150, 250);
+            form3 = new Form3(this, GodFather);
             form3.Show();
             this.Hide();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
-            Snm = new Sinema("Star Wars", 80, 300);
-            form3.Snm = Snm;
+            StarWars = new Sinema("Star Wars", 80, 300);
+            form3 = new Form3(this, StarWars);
             form3.Show();
             this.Hide();
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
-            Snm = new Sinema("Harry Potter", 150, 200);
-            form3.Snm = Snm;
+            HarryPotter = new Sinema("Harry Potter", 150, 200);
+            form3 = new Form3(this, HarryPotter);
             form3.Show();
             this.Hide();
-
         }
-
+        
         private void durumBilgisiButton_Click(object sender, EventArgs e)
         {
             label3.Text = Snm.TamBiletAdeti.ToString();
             label4.Text = Snm.Ciro.ToString();
-
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
 
-
         }
     }
-
-
 
     public interface IFilm
     {
         public string FilmAdi { get; set; }
         public uint Kapasite { get; set; }
-        public uint TamBiletFiyati { get; set; }
-
+        public uint BiletFiyati { get; set; }
 
     }
     public class Sinema : IFilm
     {
-
         public string FilmAdi { get; set; }
         public uint Kapasite { get; set; }
-        public uint TamBiletFiyati { get; set; }
-
-        public int TamBiletAdeti { get; private set; }
-
-
-
+        public uint BiletFiyati { get; set; }
+        public int TamBiletAdeti { get; private set; } 
+        
         public Sinema(string filmAdi, uint kapasite, uint tam)
         {
             this.FilmAdi = filmAdi;
             this.Kapasite = kapasite;
-            this.TamBiletFiyati = tam;
+            this.BiletFiyati = tam;
 
         }
-
-        public float Ciro
+        public decimal Ciro
         {
             get
             {
-                return this.TamBiletAdeti * this.TamBiletFiyati;
+                return this.TamBiletAdeti * this.BiletFiyati;
             }
         }
-
         public void BiletSatisi(int BiletAdeti)
         {
-            if (BiletAdeti <= BosKoltukAdetiGetir())
+            if (BiletAdeti <= BosKoltukAdeti)
             {
                 this.TamBiletAdeti += BiletAdeti;
 
@@ -125,7 +110,7 @@ namespace Windows_Form_Sinema_Uygulama
             }
             else
             {
-                MessageBox.Show(BosKoltukAdetiGetir() + " adet boş koltuk olduğundan işlem gerçekleşmedi");
+                MessageBox.Show(BosKoltukAdeti + " adet boş koltuk olduğundan işlem gerçekleşmedi");
             }
         }
         public void BiletIadesi(int biletAdeti)
@@ -140,17 +125,15 @@ namespace Windows_Form_Sinema_Uygulama
             {
                 MessageBox.Show("Satılmış bilet adetinden fazla iade işlemi yapılamaz.");
             }
-
         }
-
-
-        public int BosKoltukAdetiGetir()
+        public int BosKoltukAdeti
         {
-            return (int)(this.Kapasite - this.TamBiletAdeti);
+            get
+            {
+                return (int)(this.Kapasite - this.TamBiletAdeti);
+            }
         }
 
     }
-
-
 
 }

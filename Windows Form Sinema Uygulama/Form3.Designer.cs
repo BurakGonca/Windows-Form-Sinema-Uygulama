@@ -34,7 +34,9 @@
             button1 = new Button();
             groupBox1 = new GroupBox();
             label1 = new Label();
+            numericUpDown1 = new NumericUpDown();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // button5
@@ -76,7 +78,7 @@
             // button1
             // 
             button1.BackgroundImage = Properties.Resources.FORM1;
-            button1.Location = new Point(345, 292);
+            button1.Location = new Point(344, 58);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 9;
@@ -90,7 +92,7 @@
             groupBox1.BackgroundImage = Properties.Resources._33;
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(197, 118);
+            groupBox1.Location = new Point(197, 93);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(389, 163);
             groupBox1.TabIndex = 8;
@@ -106,6 +108,13 @@
             label1.Size = new Size(0, 23);
             label1.TabIndex = 0;
             // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(316, 302);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(150, 27);
+            numericUpDown1.TabIndex = 15;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -113,6 +122,7 @@
             BackgroundImage = Properties.Resources._33;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(782, 613);
+            Controls.Add(numericUpDown1);
             Controls.Add(button5);
             Controls.Add(biletIadeButton);
             Controls.Add(biletSatButton);
@@ -122,6 +132,7 @@
             Text = "FİLM İSLEMLERİ";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -133,5 +144,6 @@
         private Button button1;
         private GroupBox groupBox1;
         private Label label1;
+        private NumericUpDown numericUpDown1;
     }
 }
