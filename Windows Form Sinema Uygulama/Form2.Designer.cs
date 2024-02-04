@@ -50,9 +50,9 @@
             durumBilgisiButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             durumBilgisiButton.Location = new Point(398, 359);
             durumBilgisiButton.Name = "durumBilgisiButton";
-            durumBilgisiButton.Size = new Size(203, 29);
+            durumBilgisiButton.Size = new Size(203, 49);
             durumBilgisiButton.TabIndex = 14;
-            durumBilgisiButton.Text = "DURUM BİLGİSİ";
+            durumBilgisiButton.Text = "Durum Bilgisi";
             durumBilgisiButton.UseVisualStyleBackColor = true;
             durumBilgisiButton.Click += durumBilgisiButton_Click;
             // 
@@ -118,9 +118,9 @@
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(181, 359);
             button1.Name = "button1";
-            button1.Size = new Size(203, 29);
+            button1.Size = new Size(203, 49);
             button1.TabIndex = 8;
-            button1.Text = "Personel Giris Ekranı";
+            button1.Text = "Personel Değiştir";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -143,7 +143,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(275, 76);
+            label4.Location = new Point(305, 76);
             label4.Name = "label4";
             label4.Size = new Size(0, 23);
             label4.TabIndex = 17;
@@ -151,7 +151,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(114, 76);
+            label3.Location = new Point(120, 76);
             label3.Name = "label3";
             label3.Size = new Size(0, 23);
             label3.TabIndex = 16;
@@ -159,24 +159,24 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(251, 48);
+            label2.Location = new Point(279, 48);
             label2.Name = "label2";
-            label2.Size = new Size(107, 23);
+            label2.Size = new Size(93, 20);
             label2.TabIndex = 1;
             label2.Text = "Toplam Ciro";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(65, 48);
+            label1.Location = new Point(44, 48);
             label1.Name = "label1";
-            label1.Size = new Size(156, 23);
+            label1.Size = new Size(190, 20);
             label1.TabIndex = 0;
-            label1.Text = "Satılan Bilet Adeti";
+            label1.Text = "Toplam Satılan Bilet Adeti";
             // 
             // Form2
             // 

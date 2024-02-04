@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Windows_Form_Sinema_Uygulama
 {
+
     public partial class Form2 : Form
     {
+
         private Form1 form1;
         private Form3 form3;
         public Sinema Snm { get; set; }
@@ -34,14 +36,18 @@ namespace Windows_Form_Sinema_Uygulama
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            EsaretinBedeli = new Sinema("Esaretin Bedeli",100,200);
-            form3 = new Form3(this,EsaretinBedeli);
+            EsaretinBedeli = new Sinema("Esaretin Bedeli", 100, 200);
+            FilmDeposu.SeciliFilm = EsaretinBedeli;
+            form3 = new Form3(this, FilmDeposu.SeciliFilm);
             form3.Show();
             this.Hide();
+
+
         }
         private void button3_Click(object sender, EventArgs e)
         {
             GodFather = new Sinema("The GodFather", 150, 250);
+            FilmDeposu.SeciliFilm = GodFather;
             form3 = new Form3(this, GodFather);
             form3.Show();
             this.Hide();
@@ -49,6 +55,7 @@ namespace Windows_Form_Sinema_Uygulama
         private void button4_Click(object sender, EventArgs e)
         {
             StarWars = new Sinema("Star Wars", 80, 300);
+            FilmDeposu.SeciliFilm = StarWars;
             form3 = new Form3(this, StarWars);
             form3.Show();
             this.Hide();
@@ -56,21 +63,44 @@ namespace Windows_Form_Sinema_Uygulama
         private void button5_Click(object sender, EventArgs e)
         {
             HarryPotter = new Sinema("Harry Potter", 150, 200);
+            FilmDeposu.SeciliFilm = HarryPotter;
             form3 = new Form3(this, HarryPotter);
             form3.Show();
             this.Hide();
         }
-        
-        private void durumBilgisiButton_Click(object sender, EventArgs e)
-        {
-            label3.Text = Snm.TamBiletAdeti.ToString();
-            label4.Text = Snm.Ciro.ToString();
-        }
+
+        public int biletAdeti;
+        public decimal ciro;
         private void Form2_Load(object sender, EventArgs e)
         {
+            biletAdeti = 0;
+            ciro = 0;
+        }
+
+
+        public void UpdateDurumBilgisi(int satilanBiletAdeti, decimal satilanCiro)
+        {
+
+            biletAdeti += satilanBiletAdeti;
+            ciro += satilanCiro;
+
 
         }
+
+        private void durumBilgisiButton_Click(object sender, EventArgs e)
+        {
+            label3.Text = biletAdeti.ToString();
+            label4.Text = ciro.ToString() + " TL";
+        }
+
     }
+
+
+    public static class FilmDeposu
+    {
+        public static Sinema SeciliFilm { get; set; }
+    }
+
 
     public interface IFilm
     {
@@ -79,13 +109,15 @@ namespace Windows_Form_Sinema_Uygulama
         public uint BiletFiyati { get; set; }
 
     }
+
+
     public class Sinema : IFilm
     {
         public string FilmAdi { get; set; }
         public uint Kapasite { get; set; }
         public uint BiletFiyati { get; set; }
-        public int TamBiletAdeti { get; private set; } 
-        
+        public int BiletAdeti { get; set; }
+
         public Sinema(string filmAdi, uint kapasite, uint tam)
         {
             this.FilmAdi = filmAdi;
@@ -97,14 +129,14 @@ namespace Windows_Form_Sinema_Uygulama
         {
             get
             {
-                return this.TamBiletAdeti * this.BiletFiyati;
+                return this.BiletAdeti * this.BiletFiyati;
             }
         }
-        public void BiletSatisi(int BiletAdeti)
+        public void BiletSatisi(int _BiletAdeti)
         {
-            if (BiletAdeti <= BosKoltukAdeti)
+            if (_BiletAdeti <= BosKoltukAdeti)
             {
-                this.TamBiletAdeti += BiletAdeti;
+                this.BiletAdeti += _BiletAdeti;
 
                 MessageBox.Show("Bilet satışı gerçekleştirildi");
             }
@@ -113,11 +145,11 @@ namespace Windows_Form_Sinema_Uygulama
                 MessageBox.Show(BosKoltukAdeti + " adet boş koltuk olduğundan işlem gerçekleşmedi");
             }
         }
-        public void BiletIadesi(int biletAdeti)
+        public void BiletIadesi(int _BiletAdeti)
         {
-            if (biletAdeti <= this.TamBiletAdeti)
+            if (_BiletAdeti <= this.BiletAdeti)
             {
-                this.TamBiletAdeti -= biletAdeti;
+                this.BiletAdeti -= _BiletAdeti;
 
                 MessageBox.Show("Bilet iadesi gerçekleştirildi");
             }
@@ -130,7 +162,7 @@ namespace Windows_Form_Sinema_Uygulama
         {
             get
             {
-                return (int)(this.Kapasite - this.TamBiletAdeti);
+                return (int)(this.Kapasite - this.BiletAdeti);
             }
         }
 

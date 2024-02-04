@@ -94,7 +94,7 @@
             groupBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(197, 93);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(389, 163);
+            groupBox1.Size = new Size(389, 175);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "FİLM BİLGİLERİ";
