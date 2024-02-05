@@ -16,7 +16,7 @@ namespace Windows_Form_Sinema_Uygulama
 
         private Form1 form1;
         private Form3 form3;
-        public Film Snm { get; set; }
+        public Film _biletIslem { get; set; }
         public Film EsaretinBedeli { get; set; }
         public Film GodFather { get; set; }
         public Film StarWars { get; set; }
@@ -29,7 +29,7 @@ namespace Windows_Form_Sinema_Uygulama
         public Form2(Form _form1)
         {
             InitializeComponent();
-            form3 = new Form3(this, Snm);
+            form3 = new Form3(this, _biletIslem);
             form1 = (Form1)_form1;
         }
 
@@ -144,9 +144,9 @@ namespace Windows_Form_Sinema_Uygulama
 
     public interface IFilmTip
     {
-        public string FilmAdi { get; set; }
-        public uint Kapasite { get; set; }
-        public uint BiletFiyati { get; set; }
+        public string FilmAdi { get;}
+        public uint Kapasite { get;}
+        public uint BiletFiyati { get; }
 
     }
 
@@ -156,7 +156,7 @@ namespace Windows_Form_Sinema_Uygulama
         public string FilmAdi { get; set; }
         public uint Kapasite { get; set; }
         public uint BiletFiyati { get; set; }
-        public int BiletAdeti { get; set; }
+        internal int BiletAdeti { get; set; }
 
         public Film(string filmAdi, uint kapasite, uint tam)
         {
@@ -183,6 +183,8 @@ namespace Windows_Form_Sinema_Uygulama
             else
             {
                 MessageBox.Show(BosKoltukAdeti + " adet boş koltuk olduğundan işlem gerçekleşmedi");
+               
+               
             }
         }
         public void BiletIadesi(int _BiletAdeti)
@@ -204,7 +206,10 @@ namespace Windows_Form_Sinema_Uygulama
             {
                 return (int)(this.Kapasite - this.BiletAdeti);
             }
+            
         }
+
+        
 
     }
 

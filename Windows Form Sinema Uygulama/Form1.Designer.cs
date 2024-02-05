@@ -32,15 +32,15 @@
             button1 = new Button();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(336, 340);
+            button1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.DimGray;
+            button1.Location = new Point(283, 334);
             button1.Name = "button1";
-            button1.Size = new Size(101, 29);
+            button1.Size = new Size(205, 29);
             button1.TabIndex = 9;
             button1.Text = "Giriş";
             button1.UseVisualStyleBackColor = true;
@@ -48,42 +48,31 @@
             // 
             // textBox2
             // 
-            textBox2.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textBox2.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Italic, GraphicsUnit.Point);
+            textBox2.ForeColor = Color.Silver;
             textBox2.Location = new Point(283, 276);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '•';
-            textBox2.Size = new Size(205, 41);
+            textBox2.Size = new Size(205, 40);
             textBox2.TabIndex = 8;
+            textBox2.Text = "Sifre";
             textBox2.TextAlign = HorizontalAlignment.Center;
+            textBox2.Enter += textBox2_Enter;
+            textBox2.Leave += textBox2_Leave;
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            textBox1.Font = new Font("Trebuchet MS", 10.8F, FontStyle.Italic, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.Silver;
             textBox1.Location = new Point(283, 209);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(205, 44);
+            textBox1.Size = new Size(205, 40);
             textBox1.TabIndex = 7;
+            textBox1.Text = "Kullanıcı Adı";
             textBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(229, 288);
-            label2.Name = "label2";
-            label2.Size = new Size(42, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Sifre:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(176, 223);
-            label1.Name = "label1";
-            label1.Size = new Size(95, 20);
-            label1.TabIndex = 5;
-            label1.Text = "Kullanıcı Adı:";
+            textBox1.Enter += textBox1_Enter;
+            textBox1.Leave += textBox1_Leave;
             // 
             // Form1
             // 
@@ -95,10 +84,9 @@
             Controls.Add(button1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Name = "Form1";
             Text = "KULLANICI GİRİS EKRANI";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -108,7 +96,5 @@
         private Button button1;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Label label2;
-        private Label label1;
     }
 }

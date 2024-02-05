@@ -7,10 +7,10 @@ namespace Windows_Form_Sinema_Uygulama
             InitializeComponent();
         }
 
+        Kullanici[] kullaniciDizi = new Kullanici[3];
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Kullanici[] kullaniciDizi = new Kullanici[3];
-
             kullaniciDizi[0] = new Kullanici("burak", "1234");
             kullaniciDizi[1] = new Kullanici("gonca", "4321");
             kullaniciDizi[2] = new Kullanici("burki", "1991");
@@ -53,15 +53,60 @@ namespace Windows_Form_Sinema_Uygulama
 
         }
 
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Kullanýcý Adý")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
 
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Kullanýcý Adý";
+                textBox1.ForeColor = Color.Silver;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "Kullanýcý Adý";
+            textBox1.ForeColor = Color.Silver;
+            textBox2.Text = "Sifre";
+            textBox2.ForeColor = Color.Silver;
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Sifre")
+            {
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "Sifre";
+                textBox2.ForeColor = Color.Silver;
+            }
+        }
+
+        
     }
 
     public class Kullanici
     {
-        public string KullaniciAdi { get; set; }
-        public string Sifre { get; set; }
+        public string KullaniciAdi { get; }
+        public string Sifre { get; }
 
-        public Kullanici(string kullaniciAdi, string sifre)
+        internal Kullanici(string kullaniciAdi, string sifre)
         {
             KullaniciAdi = kullaniciAdi;
             Sifre = sifre;

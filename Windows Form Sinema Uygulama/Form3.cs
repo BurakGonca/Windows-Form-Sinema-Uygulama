@@ -13,10 +13,8 @@ namespace Windows_Form_Sinema_Uygulama
     public partial class Form3 : Form
     {
 
-        private Form2 form2;
+        public Form2 form2;
         public Film BiletIslemleri { get; set; }
-
-        public int GenelToplamBiletAdeti { get; set; }
 
         public Form3(Form _form2, Film _biletIslemleri)
         {
@@ -44,16 +42,25 @@ namespace Windows_Form_Sinema_Uygulama
         {
             int biletAdeti = (int)numericUpDown1.Value;
             decimal satilanCiro = BiletIslemleri.Ciro;
-            BiletIslemleri.BiletSatisi(biletAdeti);
-            form2.DurumBilgisiGuncelle(biletAdeti, BiletIslemleri.Ciro - satilanCiro);
+            if (biletAdeti > 0)
+            {
+                BiletIslemleri.BiletSatisi(biletAdeti);
+                form2.DurumBilgisiGuncelle(biletAdeti, BiletIslemleri.Ciro - satilanCiro);
+            }
+            else MessageBox.Show("Bilet Adeti '0'dan Farklı olmalıdır");
+            
         }
 
         private void biletIadeButton_Click(object sender, EventArgs e)
         {
             int biletAdeti = (int)numericUpDown1.Value;
             decimal satilanCiro = BiletIslemleri.Ciro;
-            BiletIslemleri.BiletIadesi(biletAdeti);
-            form2.DurumBilgisiGuncelle(-biletAdeti, BiletIslemleri.Ciro - satilanCiro);
+            if (biletAdeti>0 && biletAdeti<=BiletIslemleri.BiletAdeti)
+            {
+                BiletIslemleri.BiletIadesi(biletAdeti);
+                form2.DurumBilgisiGuncelle(-biletAdeti, BiletIslemleri.Ciro - satilanCiro);
+            }
+            else MessageBox.Show("Bilet Adeti '0'dan Farklı ve Satılan Bilet Adetinden Küçük Olmalıdır");
         }
         private void button5_Click_1(object sender, EventArgs e)
         {
