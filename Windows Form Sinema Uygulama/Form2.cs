@@ -16,11 +16,15 @@ namespace Windows_Form_Sinema_Uygulama
 
         private Form1 form1;
         private Form3 form3;
-        public Sinema Snm { get; set; }
-        public Sinema EsaretinBedeli { get; set; }
-        public Sinema GodFather { get; set; }
-        public Sinema StarWars { get; set; }
-        public Sinema HarryPotter { get; set; }
+        public Film Snm { get; set; }
+        public Film EsaretinBedeli { get; set; }
+        public Film GodFather { get; set; }
+        public Film StarWars { get; set; }
+        public Film HarryPotter { get; set; }
+        public Film ScarFace { get; set; }
+        public Film DarkNight { get; set; }
+        public Film PulpFiction { get; set; }
+        public Film Shrek { get; set; }
 
         public Form2(Form _form1)
         {
@@ -36,7 +40,7 @@ namespace Windows_Form_Sinema_Uygulama
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            EsaretinBedeli = new Sinema("Esaretin Bedeli", 100, 200);
+            EsaretinBedeli = new Film("Esaretin Bedeli", 100, 200);
             FilmDeposu.SeciliFilm = EsaretinBedeli;
             form3 = new Form3(this, FilmDeposu.SeciliFilm);
             form3.Show();
@@ -46,7 +50,7 @@ namespace Windows_Form_Sinema_Uygulama
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            GodFather = new Sinema("The GodFather", 150, 250);
+            GodFather = new Film("The GodFather", 150, 250);
             FilmDeposu.SeciliFilm = GodFather;
             form3 = new Form3(this, GodFather);
             form3.Show();
@@ -54,7 +58,7 @@ namespace Windows_Form_Sinema_Uygulama
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            StarWars = new Sinema("Star Wars", 80, 300);
+            StarWars = new Film("Star Wars", 80, 300);
             FilmDeposu.SeciliFilm = StarWars;
             form3 = new Form3(this, StarWars);
             form3.Show();
@@ -62,12 +66,48 @@ namespace Windows_Form_Sinema_Uygulama
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            HarryPotter = new Sinema("Harry Potter", 150, 200);
+            HarryPotter = new Film("Harry Potter", 150, 200);
             FilmDeposu.SeciliFilm = HarryPotter;
             form3 = new Form3(this, HarryPotter);
             form3.Show();
             this.Hide();
         }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ScarFace = new Film("ScarFace", 200, 250);
+            FilmDeposu.SeciliFilm = ScarFace;
+            form3 = new Form3(this, ScarFace);
+            form3.Show();
+            this.Hide();
+
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DarkNight = new Film("DarkNight", 225, 225);
+            FilmDeposu.SeciliFilm = DarkNight;
+            form3 = new Form3(this, DarkNight);
+            form3.Show();
+            this.Hide();
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PulpFiction = new Film("PulpFiction", 250, 300);
+            FilmDeposu.SeciliFilm = PulpFiction;
+            form3 = new Form3(this, PulpFiction);
+            form3.Show();
+            this.Hide();
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Shrek = new Film("Shrek", 200, 150);
+            FilmDeposu.SeciliFilm = Shrek;
+            form3 = new Form3(this, Shrek);
+            form3.Show();
+            this.Hide();
+        }
+
+
+
 
         public int biletAdeti;
         public decimal ciro;
@@ -78,7 +118,7 @@ namespace Windows_Form_Sinema_Uygulama
         }
 
 
-        public void UpdateDurumBilgisi(int satilanBiletAdeti, decimal satilanCiro)
+        public void DurumBilgisiGuncelle(int satilanBiletAdeti, decimal satilanCiro)
         {
 
             biletAdeti += satilanBiletAdeti;
@@ -98,11 +138,11 @@ namespace Windows_Form_Sinema_Uygulama
 
     public static class FilmDeposu
     {
-        public static Sinema SeciliFilm { get; set; }
+        public static Film SeciliFilm { get; set; }
     }
 
 
-    public interface IFilm
+    public interface IFilmTip
     {
         public string FilmAdi { get; set; }
         public uint Kapasite { get; set; }
@@ -111,14 +151,14 @@ namespace Windows_Form_Sinema_Uygulama
     }
 
 
-    public class Sinema : IFilm
+    public class Film : IFilmTip
     {
         public string FilmAdi { get; set; }
         public uint Kapasite { get; set; }
         public uint BiletFiyati { get; set; }
         public int BiletAdeti { get; set; }
 
-        public Sinema(string filmAdi, uint kapasite, uint tam)
+        public Film(string filmAdi, uint kapasite, uint tam)
         {
             this.FilmAdi = filmAdi;
             this.Kapasite = kapasite;

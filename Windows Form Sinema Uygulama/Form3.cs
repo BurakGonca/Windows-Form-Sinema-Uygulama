@@ -14,11 +14,11 @@ namespace Windows_Form_Sinema_Uygulama
     {
 
         private Form2 form2;
-        public Sinema BiletIslemleri { get; set; }
+        public Film BiletIslemleri { get; set; }
 
         public int GenelToplamBiletAdeti { get; set; }
 
-        public Form3(Form _form2, Sinema _biletIslemleri)
+        public Form3(Form _form2, Film _biletIslemleri)
         {
             InitializeComponent();
             form2 = (Form2)_form2;
@@ -27,9 +27,9 @@ namespace Windows_Form_Sinema_Uygulama
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            UpdateSatishBilgileri();
+            SatisBilgileriGuncelle();
         }
-        private void UpdateSatishBilgileri()
+        private void SatisBilgileriGuncelle ()
         {
             label1.Text = $"Filmin Adı                    : {FilmDeposu.SeciliFilm.FilmAdi}\n" +
                           $"Kapasite                      : {FilmDeposu.SeciliFilm.Kapasite} Koltuk\n" +
@@ -45,7 +45,7 @@ namespace Windows_Form_Sinema_Uygulama
             int biletAdeti = (int)numericUpDown1.Value;
             decimal satilanCiro = BiletIslemleri.Ciro;
             BiletIslemleri.BiletSatisi(biletAdeti);
-            form2.UpdateDurumBilgisi(biletAdeti, BiletIslemleri.Ciro - satilanCiro);
+            form2.DurumBilgisiGuncelle(biletAdeti, BiletIslemleri.Ciro - satilanCiro);
         }
 
         private void biletIadeButton_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Windows_Form_Sinema_Uygulama
             int biletAdeti = (int)numericUpDown1.Value;
             decimal satilanCiro = BiletIslemleri.Ciro;
             BiletIslemleri.BiletIadesi(biletAdeti);
-            form2.UpdateDurumBilgisi(-biletAdeti, BiletIslemleri.Ciro - satilanCiro);
+            form2.DurumBilgisiGuncelle(-biletAdeti, BiletIslemleri.Ciro - satilanCiro);
         }
         private void button5_Click_1(object sender, EventArgs e)
         {
